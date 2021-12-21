@@ -1,0 +1,15 @@
+artifact_uri: file:///home/sugimoto/document_summarizer/pointer_generator_network/notebooks/mlruns/0/82192916ea834c49b4b90d521faaa793/artifacts
+end_time: 1631860607227
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+name: ''
+run_id: 82192916ea834c49b4b90d521faaa793
+run_uuid: 82192916ea834c49b4b90d521faaa793
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1631860569303
+status: 3
+tags: []
+user_id: sugimoto

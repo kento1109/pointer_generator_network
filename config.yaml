@@ -1,0 +1,46 @@
+tag: Adam_without_coverage
+
+base_path: /home/document_summarizer
+train_data_path: ${base_path}/data/train*.json
+test_data_path: ${base_path}/data/test.json
+source_vocab_path: ${base_path}/vocab/source_vocab_5k.txt 
+target_vocab_path: ${base_path}/vocab/target_vocab_5k.txt
+save_model: True
+model_dir: ${base_path}/pointer_generator_network/models
+
+write_hydra: True
+
+load_model_state: True
+load_model_name: 1f3d167ebde94d11a511135b804471d0.pt
+
+do_train: True
+do_evaluate: False
+
+comm_params:
+  batch_size: 16
+  num_epochs: 3
+  adagrad_init_acc: 0.1
+  lr: 0.15
+  rand_unif_init_mag: 0.02
+  trunc_norm_init_std: 0.0001
+  max_grad_norm: 2.0
+
+enc_params:
+  max_seq_length: 1024
+  vocab_size: 50000
+  emb_dim: 128
+  hidden_dim: 256
+
+dec_params:
+  pointer_gen: True
+  is_coverage: True
+  cov_loss_wt: 1.0
+  lr_coverage: 0.001
+  # lr_coverage: 0.15
+  max_seq_length: 100
+  vocab_size: 50000
+  emb_dim: 128
+  hidden_dim: 256
+
+beam_size: 4
+min_dec_steps: 50
